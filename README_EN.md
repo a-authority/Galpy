@@ -8,7 +8,7 @@
 [![Python Version](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![GUI Framework](https://img.shields.io/badge/GUI-PySide6%20%28Qt6%29-41CD52?logo=qt&logoColor=white)](https://pypi.org/project/PySide6/)
 [![Web Deployment](https://img.shields.io/badge/Deploy-Cloudflare%20%7C%20Vercel%20%7C%20Docker-F38020?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Language](https://img.shields.io/badge/Language-English%20%7C%20中文-lightgrey)](#-languages)
 
 [**English**](README_EN.md) • [**简体中文**](README.md)
@@ -226,7 +226,7 @@ GalPy/
 
 ## 📜 License
 
-This project is licensed under the **[MIT License](LICENSE)**. You are free to use it for personal learning, fan creations, and commercial visual novel production.
+This project is licensed under the **[Apache License 2.0](LICENSE)**. You are free to use it for personal learning, fan creations, and commercial visual novel production.
 
 > ⚠️ **Third-Party Dependency Notice**:
 > - `PySide6` is licensed under **LGPLv3**;

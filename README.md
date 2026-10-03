@@ -8,7 +8,7 @@
 [![Python Version](https://img.shields.io/badge/Python-3.9+-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![GUI Framework](https://img.shields.io/badge/GUI-PySide6%20%28Qt6%29-41CD52?logo=qt&logoColor=white)](https://pypi.org/project/PySide6/)
 [![Web Deployment](https://img.shields.io/badge/Deploy-Cloudflare%20%7C%20Vercel%20%7C%20Docker-F38020?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Language](https://img.shields.io/badge/Language-中文%20%7C%20English-lightgrey)](#-语言--languages)
 
 [**简体中文**](README.md) • [**English**](README_EN.md)
@@ -225,7 +225,7 @@ GalPy/
 
 ## 📜 开源许可证
 
-本项目基于 **[MIT License](LICENSE)** 开源。您可以自由用于私人学习、二创修改以及商业化游戏发布。
+本项目基于 **[Apache License 2.0](LICENSE)** 开源。您可以自由用于私人学习、二创修改以及商业化游戏发布。
 
 > ⚠️ **关于依赖许可声明**：
 > - 本项目使用的图形界面依赖库 `PySide6` 遵循 **LGPLv3** 开源协议；
