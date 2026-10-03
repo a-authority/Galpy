@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{ title }} - GalPy Web</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/player.css') }}">
+</head>
+<body>
+    <!-- 游戏根容器: 按工程分辨率定比例, 内部所有元素相对它定位 -->
+    <div id="game-root" class="game-root">
+        <!-- 背景层 -->
+        <div id="bg-layer" class="bg-layer"></div>
+
+        <!-- 立绘层 (按 position 定位) -->
+        <div id="char-layer" class="char-layer"></div>
+
+        <!-- 视频层 (整屏覆盖, 默认隐藏) -->
+        <video id="video-layer" class="video-layer" playsinline></video>
+
+        <!-- 对白框 -->
+        <div id="dialogue-box" class="dialogue-box hidden">
+            <div id="name-plate" class="name-plate hidden"></div>
+            <div id="body-text" class="body-text"></div>
+            <div id="hint-text" class="hint-text">点击 / 空格 继续</div>
+        </div>
+
+        <!-- 选项提示 + 选项按钮 -->
+        <div id="prompt-label" class="prompt-label hidden"></div>
+        <div id="choices-widget" class="choices-widget hidden"></div>
+
+        <!-- 右上角浮动存档按钮 -->
+        <button id="quick-save-btn" class="quick-save-btn hidden">💾 存档</button>
+
+        <!-- 标题菜单覆盖层 -->
+        <div id="title-widget" class="overlay hidden">
+            <div class="overlay-inner">
+                <div id="title-label" class="overlay-title">{{ title }}</div>
+                <div class="overlay-sub">— GalPy Web —</div>
+                <div class="overlay-spacer"></div>
+                <button class="menu-btn" data-act="new-game">▶  开始游戏</button>
+                <button class="menu-btn" data-act="continue">↻  继续游戏</button>
+                <button class="menu-btn" data-act="load">📂  加载存档</button>
+            </div>
+        </div>
+
+        <!-- 系统菜单覆盖层 -->
+        <div id="menu-widget" class="overlay hidden">
+            <div class="overlay-inner">
+                <div class="overlay-title">系统菜单</div>
+                <div class="overlay-spacer"></div>
+                <button class="menu-btn" data-act="save">💾  保存进度</button>
+                <button class="menu-btn" data-act="load-menu">📂  读取进度</button>
+                <button class="menu-btn" data-act="title">🏠  返回标题</button>
+                <button class="menu-btn" data-act="resume">▶  返回游戏</button>
+            </div>
+        </div>
+
+        <!-- 存档槽覆盖层 -->
+        <div id="slot-widget" class="overlay hidden">
+            <div class="overlay-inner">
+                <div id="slot-header" class="overlay-title">存档</div>
+                <div class="overlay-spacer"></div>
+                <div id="slot-grid" class="slot-grid"></div>
+                <div class="overlay-spacer"></div>
+                <button class="menu-btn" data-act="slot-back">←  返回</button>
+            </div>
+        </div>
+
+        <!-- 结束页 -->
+        <div id="end-widget" class="overlay hidden">
+            <div class="overlay-inner">
+                <div class="end-text">— 终 —</div>
+                <div id="end-sub" class="end-sub"></div>
+                <div class="overlay-spacer"></div>
+                <button class="menu-btn" data-act="end-close">返回标题</button>
+            </div>
+        </div>
+
+        <!-- 加载提示 -->
+        <div id="loading" class="loading">
+            <div class="loading-text">正在加载游戏…</div>
+        </div>
+    </div>
+
+    <script>
+        // 注入运行时配置: dev 服务器模式 (Flask 提供 /api/project 与 /assets/)
+        window.GALPY_PROJECT_URL = "/api/project";
+        window.GALPY_ASSET_PREFIX = "/assets/";
+    </script>
+    <script src="{{ url_for('static', filename='js/galpy_player.js') }}"></script>
+</body>
+</html>
